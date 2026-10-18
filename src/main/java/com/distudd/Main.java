@@ -10,14 +10,15 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        while(true) {
-//            for (int i = 0; i < 50; i++) {
-//                System.out.println();
-//            }
+        boolean work = true;
+
+//        TODO: create menu class
+        do {
 
             System.out.println("Выберите действие:");
             System.out.println("1 - список задач");
             System.out.println("2 - добавить задачу");
+            System.out.println("3 - выход");
 
             String inp = scan.nextLine();
 
@@ -25,10 +26,9 @@ public class Main {
                 case "1":
                     if (tasks.getTasks().isEmpty()) {
                         System.out.println("emp");
-                    }
-                    else {
-                        for(Task task : tasks.getTasks()) {
-                            System.out.println( task.printTask() );
+                    } else {
+                        for (Task task : tasks.getTasks()) {
+                            System.out.println(task.printTask());
                         }
                     }
                     break;
@@ -38,12 +38,17 @@ public class Main {
                     tasks.addTask(new Task(scan.nextLine()));
                     break;
 
+                case "3":
+                    System.out.println("выход");
+                    work = false;
+                    break;
+
                 default:
                     System.out.println("wrong command");
 
             }
 
-        }
+        } while (work);
 
 //        Task task1 = new Task("Task 1");
 //

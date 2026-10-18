@@ -12,6 +12,10 @@ public class TaskList {
         this.name = name;
     }
 
+    /**
+     * Используется для добавления нового элемента в хранилище
+     * @param task Task
+     */
     public void addTask(Task task) {
         this.tasks.add(task);
     }
